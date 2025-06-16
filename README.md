@@ -23,7 +23,7 @@ A modern, high-performance product search web application built with **Next.js**
 * ✅ **Vendor** multi-select checkbox filter
 * ✅ **Status** checkbox filter (if available)
 * ✅ **Tags** multi-select checkbox filter with cleaned tags (excludes `_` or `|`)
-* ✅ **Price Range** slider with min/max values and currency formatting (GBP)
+* ✅ **Price Range** Enter the price change that you want
 * ✅ All filters work in combination with each other
 * ✅ Filters collapse by default on mobile
 
