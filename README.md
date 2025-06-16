@@ -1,4 +1,4 @@
-# 🏍️ Product Search Platform
+# 🌐 Product Search Platform
 
 A modern, high-performance product search web application built with **Next.js**, **React**, and **Fuse.js**. Designed to handle large product catalogs with intelligent **search**, **filtering**, and **sorting** capabilities — optimized for real-world e-commerce use.
 
