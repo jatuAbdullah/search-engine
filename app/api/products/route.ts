@@ -32,12 +32,14 @@ async function getProducts(): Promise<Product[]> {
 
     // Debug: Log first product
     if (products.length > 0) {
-      // console.log("📦 Sample product:", {
+      /*
+       console.log("📦 Sample product:", {
         title: products[0].TITLE,
         vendor: products[0].VENDOR,
         tags: products[0].TAGS?.substring(0, 50),
         price: products[0].PRICE_RANGE_V2?.min_variant_price?.amount,
       })
+        */
     }
 
     // Cache the results
