@@ -208,60 +208,64 @@ useEffect(() => {
           </div>
         )}
 
-        {/* Search Results */}
-        {query && (
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            {/* Filters Sidebar */}
-            {results.total > 0 && (
-              <aside className="lg:col-span-1">
-                <Filters filters={filters} onFiltersChange={setFilters} filterOptions={filterOptions} />
-              </aside>
-            )}
+      
+      {/* Search Results */}
+{query && (
+  <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+    {/* Filters Sidebar */}
+    <aside className="lg:col-span-1">
+      <Filters
+        filters={filters}
+        onFiltersChange={setFilters}
+        filterOptions={filterOptions}
+      />
+    </aside>
 
-            {/* Main Content */}
-            <div className={`${results.total > 0 ? "lg:col-span-3" : "lg:col-span-4"} space-y-6`}>
-              {/* Results Header */}
-              {results.total > 0 && (
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div className="flex items-center gap-4">
-                    <h2 className="text-lg font-semibold">
-                      {results.total} {results.total === 1 ? "Product" : "Products"}
-                    </h2>
-                    <span className="text-sm text-gray-600">for "{query}"</span>
-                  </div>
-
-                  <SortDropdown value={sortType} onChange={setSortType} />
-                </div>
-              )}
-
-              {/* Products Grid */}
-              {results.products.length > 0 ? (
-                <>
-                  <ProductGrid products={results.products} />
-
-                  {/* Pagination */}
-                  <Pagination
-                    currentPage={currentPage}
-                    totalItems={results.total}
-                    itemsPerPage={20}
-                    onPageChange={setCurrentPage}
-                    hasMore={results.hasMore}
-                  />
-                </>
-              ) : results.total > 0 ? (
-                <EmptyState hasFilters={hasActiveFilters} onClearFilters={clearFilters} />
-              ) : (
-                <div className="text-center py-16">
-                  <Search className="h-16 w-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">No products found</h3>
-                  <p className="text-gray-600 mb-6">
-                    No products match your search for "{query}". Try different keywords.
-                  </p>
-                </div>
-              )}
-            </div>
+    {/* Main Content */}
+    <div className="lg:col-span-3 space-y-6">
+      {/* Results Header */}
+      {results.total > 0 && (
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <h2 className="text-lg font-semibold">
+              {results.total} {results.total === 1 ? "Product" : "Products"}
+            </h2>
+            <span className="text-sm text-gray-600">for "{query}"</span>
           </div>
-        )}
+
+          <SortDropdown value={sortType} onChange={setSortType} />
+        </div>
+      )}
+
+      {/* Products Grid */}
+      {results.products.length > 0 ? (
+        <>
+          <ProductGrid products={results.products} />
+
+          {/* Pagination */}
+          <Pagination
+            currentPage={currentPage}
+            totalItems={results.total}
+            itemsPerPage={20}
+            onPageChange={setCurrentPage}
+            hasMore={results.hasMore}
+          />
+        </>
+      ) : results.total > 0 ? (
+        <EmptyState hasFilters={hasActiveFilters} onClearFilters={clearFilters} />
+      ) : (
+        <div className="text-center py-16">
+          <Search className="h-16 w-16 text-gray-300 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">No products found</h3>
+          <p className="text-gray-600 mb-6">
+            No products match your search for "{query}". Try different keywords.
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+)}
+
       </main>
     </div>
   )
